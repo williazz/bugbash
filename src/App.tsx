@@ -302,14 +302,18 @@ const LogsContent = () => {
 
 // Settings Tab Content Component
 const SettingsContent = () => {
-  const [selectedTheme, setSelectedTheme] = useState({
-    value: "light",
-    label: "Light",
+  const [selectedTheme, setSelectedTheme] = useState(() => {
+    const savedTheme = localStorage.getItem("theme") || "light";
+    return {
+      value: savedTheme,
+      label: savedTheme.charAt(0).toUpperCase() + savedTheme.slice(1),
+    };
   });
 
   const handleThemeChange = ({ detail }) => {
     setSelectedTheme(detail.selectedOption);
     applyMode(detail.selectedOption.value as Mode);
+    localStorage.setItem("theme", detail.selectedOption.value);
   };
 
   return (
@@ -414,7 +418,8 @@ const Layout = () => {
 // Root App component
 const App = () => {
   useEffect(() => {
-    applyMode("light");
+    const savedTheme = localStorage.getItem("theme") || "light";
+    applyMode(savedTheme as Mode);
   }, []);
 
   return (
