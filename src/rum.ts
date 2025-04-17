@@ -13,7 +13,16 @@ try {
     sessionSampleRate: 1,
     sessionEventLimit: 0,
     endpoint: ENDPOINT_URL,
-    telemetries: ["performance", "errors", "http"],
+    telemetries: [
+      [
+        "performance",
+        {
+          // reportAllINP: true, // [Optional] Uncomment this line to report INP immediately
+        },
+      ],
+      "errors",
+      "http",
+    ],
     allowCookies: true,
     enableXRay: false,
   };
