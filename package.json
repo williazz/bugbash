@@ -12,6 +12,7 @@
   "dependencies": {
     "@cloudscape-design/components": "^3.0.947",
     "@cloudscape-design/global-styles": "^1.0.41",
+    "aws-rum-web": "../aws-rum-web",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-router-dom": "^7.5.0"
