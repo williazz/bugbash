@@ -376,7 +376,7 @@ const Layout = () => {
     <AppLayout
       content={
         <SpaceBetween size="l">
-          <Header variant="h1">Analytics Dashboard</Header>
+          <Header variant="h1">Bugbash Demo</Header>
           <Tabs
             activeTabId={pathToTabId[location.pathname] || "dashboard"}
             onChange={({ detail }) => {
